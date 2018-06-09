@@ -11,6 +11,14 @@ build:
 install:
 	go install ${LDFLAGS}
 
+deps:
+	go get -d -v ./...
+
+dev-deps: deps
+	go get github.com/onsi/ginkgo/ginkgo
+	go get github.com/onsi/gomega
+	go get github.com/mitchellh/gox
+
 test:
 	go test ${PACKAGE}/...
 
@@ -28,4 +36,4 @@ clean:
 	test -f ${BINARY} && rm ${BINARY} || true
 	rm ${BINARY}_* || true
 
-.PHONY: build install test coverage dist release clean
+.PHONY: build deps dev-deps install test coverage dist release clean

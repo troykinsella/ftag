@@ -2,10 +2,9 @@ language: go
 go:
 - tip
 install:
-- go get github.com/mitchellh/gox
-- go get -d -v ./...
+- make dev-deps
 script:
-- go test -v -cover ./...
+- make coverage
 before_deploy:
 - test "$TRAVIS_PULL_REQUEST" == "false" && test -n "$TRAVIS_TAG" && make dist
 - sha256sum ftag_* > sha256sum.txt

@@ -11,7 +11,7 @@ A command line utility for managing the assignment of tags to files.
 
 ## Usage
 
-`ftag` maintaings a bi-directional mapping of file names to tags in a `.ftag` file as JSON.
+`ftag` maintains a bi-directional mapping of file names to tags in a `.ftag` file as JSON.
 
 ### Tag a File
 

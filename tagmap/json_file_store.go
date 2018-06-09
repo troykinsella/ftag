@@ -1,7 +1,6 @@
 package tagmap
 
 import (
-	"bitbucket.org/fnbin/fn-system/util"
 	"encoding/json"
 	"io/ioutil"
 	"os"
@@ -32,7 +31,8 @@ func (tmf *JSONFileStore) Load() (*TM, error) {
 		}
 
 		var tm TM
-		err = util.UnmarshalJSON(f, &tm)
+		dec := json.NewDecoder(f)
+		err = dec.Decode(&tm)
 		if err != nil {
 			return nil, err
 		}

@@ -61,3 +61,7 @@ When you move a file, `ftag` needs to be notified so it can update its mapping f
 $ mv oldfile.txt newfile.txt
 $ ftag mv oldfile.txt newfile.txt
 ```
+
+## License
+
+MIT © Troy Kinsella

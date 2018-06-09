@@ -9,6 +9,11 @@
 
 A command line utility for managing the assignment of tags to files.
 
+## Installation
+
+Head over to [releases](https://github.com/troykinsella/ftag/releases) and download the appropriate binary for your system.
+Put the binary in a convenient place, such as `/usr/local/bin/ftag`.
+
 ## Usage
 
 `ftag` maintains a bi-directional mapping of file names to tags in a `.ftag` file as JSON.

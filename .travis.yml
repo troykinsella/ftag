@@ -13,9 +13,9 @@ deploy:
   api_key:
     secure: G1I4gPm994WIcrMyGBdNBdb7vpj5QpD23o9Y+pZBdmLeo4cg/UcU/GFYnrf99qplHjkbO0Cy0ldyzZGJkTeDoU6UgDRC/FucrIiS/C+4ZYBwW6/4p1czYyZN9GTkMQJlciHamjdnMN1rIlMyVgH8She/IhfE2VF+SdS7iw3qanVWhmYZVh1awuQoTpzkK+u2mRZZXwA6MT53eRRRxUQG0Z9RDAUF1bNC1YUrs01MdRxidaJKc1pY4j+KaYeEdoLmxTtZke4xc0D7Ej6zxYyxjF/NLsP6s8F7spcY73xtiYOdqYRlJEz0xH09ah/OkGJWmG+z3q99l6RWBWZ7RDXn9bAOg3Myy+Vrw8vTLWtRSxOmwwi6tBAw1swpoZV6RLuNne8BaM868w00sNabJAIA2XrYo9xgMv72X03icVMGASmq1Wj+no5X79fPwJvWgKFebd3KT9+RIXT9DEHQzU3mJ6II03jUQf4doX0W7BAPHYVNJK4i9HlHOAKiuHpXeS2fY0vqBVrqglLysVTcdismT6w5KRV0Ad0GN6VUUMJ5WxFtLH7KLuPnFL/VvO0yrHXT+9JPrdc4L3ufrGgxRw93JD6jSabQ+5Uz25R45OiZMiLgqVgDmAgG6SE+1iiSpawnc1leJd8ZeMTVpdb5mrB0wZLzwuUR/EHBN1ocUaC8LZA=
   file:
-    - qc_darwin_amd64
-    - qc_linux_amd64
-    - qc_windows_amd64.exe
+    - ftag_darwin_amd64
+    - ftag_linux_amd64
+    - ftag_windows_amd64.exe
     - sha256sum.txt
   skip_cleanup: true
   on:

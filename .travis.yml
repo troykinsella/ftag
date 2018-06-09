@@ -1,0 +1,25 @@
+language: go
+go:
+- tip
+install:
+- go get github.com/mitchellh/gox
+- go get -d -v ./...
+script:
+- go test -v -cover ./...
+before_deploy:
+- test "$TRAVIS_PULL_REQUEST" == "false" && test -n "$TRAVIS_TAG" && make dist
+- sha256sum ftag_* > sha256sum.txt
+deploy:
+  provider: releases
+  api_key:
+    secure: wMS3bwt9A2uMf8Q6Bl6MmHdeqVuwUm19EQrmicqkWISaF4WdUYrY+tqs6Z+NhxxDSFBApP3N1b77KUcPOrBbAVfpx8vRbOQRFnODnjwVmpCENZjf/GrXRNi6dhCBot+Rw/jbJgfIZQvwxkbnMyuIJTiJ6lnn8gtehovvUINatCWhswHE6T7uHQ7MqIOZHKRxMt2h+Eee7b8vQw9/FAPDUAa5f84EDe+k6fmYE61O/jgXRFRqNM7JylqXr3zTUJCc4BxepHbbVTiYByhvqa1DcyswOlBM2ZsRjJIUL2q3srbgHy9uWe65/1W9h0Mn20A53vmtjhjQdVzno841AK5EdRanRWBEZ0/uM59JL0ZqllYSjcFVjfxf5/Jg667/aqVW7lT7lxlUt5FkeguzMZ4+lmD5b66BdYg+8ERcZBvm/LV1lTFZOKfGpVWEk42tRVwoMqppylKBFWgxxNLVsNNrgpJXFnDacG/gKYlO7rehBGJUOdn3ttAOzLTypwT9iRtVI4v8pm0oNhAX6qU1m9mvuj4PChF34Wjsl3aatN3066tuMht0e3Rsz61EQVHtIrYejOr9VaOaU60VyoC86InT7Adg0k7K79qQfdiaKmCVQO9f3GcgasQMbr4UlODhPXuT32Q3p6tpjlnZzGZkki7FmslnSoKRUhj5QEYC9Op8Z3I=
+  file:
+    - qc_darwin_amd64
+    - qc_linux_amd64
+    - qc_windows_amd64.exe
+    - sha256sum.txt
+  skip_cleanup: true
+  on:
+    repo: troykinsella/ftag
+    tags: true
+    go: tip

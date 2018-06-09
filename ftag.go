@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/troykinsella/ftag/tagmap"
-	"sort"
-	"os"
 	"fmt"
+	"github.com/troykinsella/ftag/tagmap"
+	"os"
+	"sort"
 )
 
 type FTag struct {
@@ -70,7 +70,8 @@ func (ft *FTag) Find(tags ...string) []string {
 	result := make([]string, 0, len(all_files))
 
 	// Retain files that have all the given tags
-	file_loop: for _, file := range all_files {
+file_loop:
+	for _, file := range all_files {
 
 		for _, tag := range tags {
 			if !ft.tagMap.FileToTag.HasValue(file, tag) {

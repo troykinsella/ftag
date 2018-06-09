@@ -14,7 +14,7 @@ type TM struct {
 
 func New() *TM {
 	return &TM{
-		Version: TM_VERSION,
+		Version:   TM_VERSION,
 		FileToTag: make(StringListMap),
 		TagToFile: make(StringListMap),
 	}

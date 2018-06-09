@@ -1,10 +1,10 @@
 package tagmap_test
 
 import (
-	. "github.com/onsi/ginkgo"
-	"github.com/troykinsella/ftag/tagmap"
-	. "github.com/onsi/gomega"
 	"errors"
+	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/gomega"
+	"github.com/troykinsella/ftag/tagmap"
 )
 
 var _ = Describe("StringListMap", func() {
@@ -229,6 +229,5 @@ var _ = Describe("StringListMap", func() {
 		})
 
 	})
-
 
 })

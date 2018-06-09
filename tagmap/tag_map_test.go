@@ -2,8 +2,8 @@ package tagmap_test
 
 import (
 	. "github.com/onsi/ginkgo"
-	"github.com/troykinsella/ftag/tagmap"
 	. "github.com/onsi/gomega"
+	"github.com/troykinsella/ftag/tagmap"
 )
 
 var _ = Describe("TagMap", func() {

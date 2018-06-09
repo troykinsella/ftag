@@ -1,10 +1,10 @@
 package tagmap
 
 import (
-	"os"
 	"bitbucket.org/fnbin/fn-system/util"
 	"encoding/json"
 	"io/ioutil"
+	"os"
 )
 
 type JSONFileStore struct {

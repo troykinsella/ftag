@@ -113,4 +113,3 @@ func contains(source []string, test string) bool {
 	}
 	return false
 }
-

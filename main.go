@@ -1,18 +1,18 @@
 package main
 
 import (
-	"github.com/urfave/cli"
-	"os"
+	"errors"
 	"fmt"
 	"github.com/troykinsella/ftag/tagmap"
+	"github.com/urfave/cli"
+	"os"
 	"path/filepath"
-	"errors"
 )
 
 const (
 	AppName = "ftag"
 
-	optTagMap = "m"
+	optTagMap     = "m"
 	optTagMapLong = "tag-map"
 
 	defaultTagMap = ".ftag"
@@ -240,57 +240,57 @@ func newCliApp() *cli.App {
 
 	app.Commands = []cli.Command{
 		{
-			Name: "add",
-			Aliases: []string{"a"},
-			Usage: "Add one ore more tags to a file",
-			UsageText: AppName+" add <file> <tag> [tag...]",
-			Action: commandAdd,
+			Name:      "add",
+			Aliases:   []string{"a"},
+			Usage:     "Add one ore more tags to a file",
+			UsageText: AppName + " add <file> <tag> [tag...]",
+			Action:    commandAdd,
 		},
 		{
-			Name: "check",
-			Usage: "Verify that files referenced in the tag mapping exist",
+			Name:   "check",
+			Usage:  "Verify that files referenced in the tag mapping exist",
 			Action: commandCheck,
 		},
 		{
-			Name: "clear",
-			Aliases: []string{"clr"},
-			Usage: "Clear all tags associated with the given files",
-			UsageText: AppName+" clear <file> [file...]",
-			Action: commandClear,
+			Name:      "clear",
+			Aliases:   []string{"clr"},
+			Usage:     "Clear all tags associated with the given files",
+			UsageText: AppName + " clear <file> [file...]",
+			Action:    commandClear,
 		},
 		{
-			Name: "find",
-			Aliases: []string{"f"},
-			Usage: "Lookup files associated with the given tags",
-			UsageText: AppName+" find <tag> [tag...]",
-			Action: commandFind,
+			Name:      "find",
+			Aliases:   []string{"f"},
+			Usage:     "Lookup files associated with the given tags",
+			UsageText: AppName + " find <tag> [tag...]",
+			Action:    commandFind,
 		},
 		{
-			Name: "list",
-			Aliases: []string{"ls"},
-			Usage: "List tags associated with the given files",
-			UsageText: AppName+" list [file...]",
-			Action: commandList,
+			Name:      "list",
+			Aliases:   []string{"ls"},
+			Usage:     "List tags associated with the given files",
+			UsageText: AppName + " list [file...]",
+			Action:    commandList,
 		},
 		{
-			Name: "move",
-			Aliases: []string{"mv"},
-			Usage: "Tell "+AppName+" about a moved file so it can update the tag mapping",
-			UsageText: AppName+" move <from> <to>",
-			Action: commandMove,
+			Name:      "move",
+			Aliases:   []string{"mv"},
+			Usage:     "Tell " + AppName + " about a moved file so it can update the tag mapping",
+			UsageText: AppName + " move <from> <to>",
+			Action:    commandMove,
 		},
 		{
-			Name: "remove",
-			Aliases: []string{"rm"},
-			Usage: "Remove one or more tags from a file",
-			UsageText: AppName+" remove <file> <tag> [tag...]",
-			Action: commandRemove,
+			Name:      "remove",
+			Aliases:   []string{"rm"},
+			Usage:     "Remove one or more tags from a file",
+			UsageText: AppName + " remove <file> <tag> [tag...]",
+			Action:    commandRemove,
 		},
 	}
 
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
-			Name:  optTagMap+", "+optTagMapLong,
+			Name:  optTagMap + ", " + optTagMapLong,
 			Value: defaultTagMap,
 			Usage: "",
 		},
